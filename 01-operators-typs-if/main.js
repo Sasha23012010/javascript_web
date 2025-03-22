@@ -28,28 +28,42 @@ let randomLabeAge = Math.floor(Math.random() * LABEL_AGE.length)
 let userAge = prompt(LABEL_AGE[randomLabeAge]);
 
 
-const MESSAGE_TRUE = [
+const MESSAGE_AGE_TRUE = [
     "Падаван "+userName+", Істинно прекрасним розум дитини є! Не вистачає "+userAge+" років, рости тобі ще.",
 "О, "+userName+", падаване, розум твій сяє, як зірка ясна. Але шлях "+userAge+" років довгий попереду, вчитися ще багато треба тобі.",
 "Мозок твій, юний учню "+userName+", гострий як меч. Але мудрість приходить з досвідом "+userAge+" років, а не лише з розумом.",
 "Далеко зайшов ти, "+userName+", але вершини ще не досяг. Терпіння та наполегливість "+userAge+" років - ось ключ до успіху.",
 "Світло розуму твого сяє, юний падаване. Але, ще "+userAge+" років "+userName+" Сила не тільки в знаннях, а й у серці."
 ]
-const MESSAGE_FALSE = [
+const MESSAGE_AGE_FALSE = [
     "Рахувти ти не вмієш, далеко тобі до сили Джедая",
 "Що за нерозумне, математики тут не знаєш, не бачити тобі сили",
 "О..оо, ти зявився чого сюди, науки іди вчитися людської. Цифри зрозумій!."
 ]
 
+const MESSAGE_OK = [
+    "Падаване "+userName+", Сила сильна в тобі, але вибір - твій. Світло чи темрява, шлях ти обираєш сам.",
+"Бачиш ти, "+userName+" падаване, все має дві сторони. Світло й тінь, життя і смерть. Вибирай мудро.",
+"Світло - шлях воїна джедая, темрява спокушає силою. Який шлях обираєш ти, "+userName+" юний учню?",
+"Бути джедаєм - значить служити іншим, а не собі. Чи готовий "+userName+" ти віддати все заради добра?",
+"Падаван "+userName+", бути джедаєм - значить дивитись правді в очі і вибирати. Випромінювати світло чи темряву. Будь свічкою або ніччю."
+]
 let r, message = '' 
 // умова\
 if (isNaN(userAge)){//не число
-    r = Math.floor(Math.random() * MESSAGE_FALSE.length)
-    message = MESSAGE_FALSE[r]
-} else {
-    r = Math.floor(Math.random() * MESSAGE_TRUE.length)
-    message = MESSAGE_TRUE[r];
+    r = Math.floor(Math.random() * MESSAGE_AGE_FALSE.length)
+    message = MESSAGE_AGE_FALSE[r]
+} else 
+    // було введено число
+    if (userAge > 18){
+
+    r = Math.floor(Math.random() * MESSAGE_AGE_TRUE.length)
+    message = MESSAGE_OK[r]
+
+    } else {
+    r = Math.floor(Math.random() * MESSAGE_AGE_TRUE.length)
+    message = MESSAGE_AGE_TRUE[r];
 }
 
 let jedi = document.getElementById('jedi');
-jedi.innerHTML = message;
+jedi.innerHTML = '<p>' + message + '</p>';
