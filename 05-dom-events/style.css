@@ -4,5 +4,41 @@
 }
 body {
     background-image: url(images/back.jpg);
-    ba
+    background-size: cover;    
+}
+
+/* --- Modal --- */
+.modal-help {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-help > div {
+    position: 
+    ;
+    width: 60%;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+}
+.modal-help > div > button {
+    position: absolute;
+    right: 10px;
+    top: 10;
+    padding: 2px;
+    font-weight: bolt;
+}
+.modal-help p {
+    text-align: right;
+
+} 
+.modal-help p > button {
+    padding: 5px;
 }
