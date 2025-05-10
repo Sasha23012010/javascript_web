@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('images/main_back.jpg');
+    background-size: cover;    
+}
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    text-shadow: 0 0 4px;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+main p {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 600px;
+}
+.grid {
+    width: 600px;
+    height: 600px;
+    border: 1px solid green;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('images/game_back.jpg');
+}
+.grid div {
+    width: 40px;
+    height: 40px;
+}
+.bomb {
+    background-image: url('images/bomb.png');
+}
+.shooter {
+    background-image: url('images/shooter.png');
+}
+.shoot {
+    background-image: url('images/boom.png');
+}
